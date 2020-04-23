@@ -1,5 +1,45 @@
 [
   {
+    "desc": "Stream video and filter with canvas",
+    "url": "gum-canvas",
+    "tags": "getUserMedia canvas",
+    "support": {
+      "live": "opera chrome",
+      "nightly": "firefox"
+    },
+    "test": "navigator.getUserMedia !== undefined"
+  },
+  {
+    "desc": "Stream video to the browser<br><small>Also works on Opera Mobile 12</small>",
+    "url": "gum",
+    "tags": "getUserMedia",
+    "support": {
+      "live": "opera chrome",
+      "nightly": "firefox"
+    },
+    "test": "navigator.getUserMedia !== undefined"
+  },
+  {
+    "desc": "Drag and drop and XHR upload",
+    "url": "dnd-upload",
+    "tags": "file dnd xhr2",
+    "support": {
+      "live": "chrome firefox opera safari",
+      "nightly": "ie"
+    },
+    "test": "typeof FileReader != 'undefined' && 'draggable' in document.createElement('span') && !!window.FormData && 'upload' in new XMLHttpRequest"
+  },
+  {
+    "desc": "Hidden property",
+    "url": "hidden",
+    "tags": "hidden",
+    "support": {
+      "live": "chrome firefox opera safari",
+      "nightly": ""
+    },
+    "test": "'hidden' in document.createElement('i')"
+  },
+  {
     "desc": "Simple class manipulation",
     "url": "classlist",
     "tags": "classlist",
@@ -44,7 +84,7 @@
     "note": "Not part of HTML5",
     "tags": "file-api",
     "support": {
-      "live": "firefox chrome opera"
+      "live": "firefox chrome opera safari"
     },
     "test": "typeof FileReader != 'undefined'"
   },
@@ -54,7 +94,7 @@
     "note": "Not directly part of HTML5",
     "tags": "file-api dnd",
     "support": {
-      "live": "firefox chrome"
+      "live": "firefox chrome opera safari"
     },
     "test": "typeof FileReader != 'undefined' && Modernizr.draganddrop"
   },
@@ -63,8 +103,8 @@
     "url": "web-socket",
     "tags": "websocket",
     "support": {
-      "live": "safari chrome",
-      "nightly": "firefox opera"
+      "live": "safari chrome opera",
+      "nightly": "firefox"
     },
     "test": "Modernizr.websockets"
   },
@@ -157,7 +197,7 @@
     "url": "drag",
     "tags": "dnd",
     "support": {
-      "live": "ie firefox safari chrome"
+      "live": "ie firefox safari chrome opera"
     },
     "test": "Modernizr.draganddrop"
   },
@@ -166,7 +206,7 @@
     "url": "drag-anything",
     "tags": "dnd",
     "support": {
-      "live": "ie firefox safari chrome"
+      "live": "ie firefox safari chrome opera"
     },
     "test": "Modernizr.draganddrop"
   },
@@ -176,7 +216,7 @@
     "tags": "offline events",
     "note": "Works on Safari Mobile too",
     "support": {
-      "live": "firefox opera"
+      "live": "firefox opera chrome safari"
     }
   },
   {
@@ -185,7 +225,7 @@
     "tags": "offline",
     "note": "Doesn't use events, only polls",
     "support": {
-      "live": "firefox opera ie"
+      "live": "firefox opera ie chrome safari"
     }
   },
   {
@@ -194,7 +234,7 @@
     "notes": "Opera &amp; Firefox - requires \"Work Offline\"",
     "tags": "offline events",
     "support": {
-      "live": "firefox opera"
+      "live": "firefox opera chrome safari"
     }
   },
   {
@@ -243,5 +283,14 @@
       "live": "safari chrome firefox opera"
     },
     "test": "Modernizr.webworkers"
+  },
+  {
+    "desc": "SVG clock animation",
+    "url": "svg-clock",
+    "tags": "svg",
+    "note": "SVG inline clock with animation.",
+    "support": {
+      "live": "ie firefox opera safari chrome"
+    }
   }
 ]
